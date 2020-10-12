@@ -1,0 +1,20 @@
+@font-face {
+	font-family:averia;
+	src:url(AveriaSerif-Regular.ttf);
+}
+@font-face {
+	font-family:averia;
+	src:url(AveriaSerif-Bold.ttf);
+	font-weight:bold;
+}
+@font-face {
+	font-family:averia;
+	src:url(AveriaSerif-Italic.ttf);
+	font-style:italic;
+}
+@font-face {
+	font-family:averia;
+	src:url(AveriaSerif-BoldItalic.ttf);
+	font-style:italic;
+	font-weight:bold;
+}

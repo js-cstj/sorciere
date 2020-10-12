@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="100" height="100">
+	<script>
+		<![CDATA[
+	window.donnees = (function (search) {
+		"use strict";
+		var resultat = {}, ds, i, n, d;
+		if (search.length <= 1 ) {return resultat;}
+		ds = search.substr(1).split(/&/g);
+		for (i=0, n=ds.length; i < n; i += 1) {
+			d = ds[i].split('=');
+			if (d.length === 1) {
+				resultat[d[0]] = '';
+			} else {
+				resultat[d[0]] = d.slice(1).join('=');
+			}
+		}
+		return resultat;
+	})(location.search)
+window.image = new Image();
+window.addEventListener('load', function() {
+});
+if (window.donnees.src != undefined) {
+	window.image.src = window.donnees.src;
+}
+window.addEventListener('load', function () {
+	document.getElementById('image').setAttributeNS('http://www.w3.org/1999/xlink', 'href', window.image.src);
+	document.activeElement.width.baseVal.value = window.image.width;
+	document.activeElement.height.baseVal.value = window.image.height;
+	if (window.donnees.couleur != undefined) {
+if (window.donnees.couleur.match(/^([0-9a-fA-F]{3}){1,2}$/)) {
+window.donnees.couleur = '#'+window.donnees.couleur;
+}
+var c=document.getElementById('couleur');
+c.setAttribute('flood-color', window.donnees.couleur);
+	}
+})
+]]>
+	</script>
+  <defs>
+    <filter id="feCouleur" x="0" y="0" width="1" height="1" color-interpolation-filters="sRGB">
+      <feColorMatrix values="1" in="SourceGraphic" type="saturate" result="result2" />
+      <feFlood id="couleur" flood-color="rgb(0,0,0)" flood-opacity="1" result="result1" />
+      <feBlend in2="result2" mode="screen" in="result1" result="result3" />
+      <feComposite in2="SourceGraphic" operator="in" k2="1" result="result4" />
+    </filter>
+  </defs>
+	<image id="image" xlink:href="/Users/martin/Sites/heros/public/images/sorciere/059.png" height="100%" width="100%" style="filter:url(#feCouleur)"></image>
+<script>
+		</script>
+</svg>

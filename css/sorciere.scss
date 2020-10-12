@@ -1,0 +1,345 @@
+@import url(images/averia_serif/style.css);
+@font-face {
+    font-family: cabaletta;
+    src: url(images/CABALETT.TTF);
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: julietta;
+    src: url("images/friendly_schoolmates/Friendly Schoolmates Regular.otf");
+}
+html {
+    height: 100%;
+}
+body {
+    font-family: averia, georgia;
+    background-image: url("images/cuir.png");
+    margin: 0px;
+    height: 100%;
+}
+article {
+    border: 7px solid transparent;
+    border-width: 8px 8px 8px 7px;
+    border-image: url(images/boite.png) 8 8 8 7 repeat;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 1em;
+    & > *:first-child {
+        margin-top: 0;
+    }
+    & p {
+        text-align: justify;
+    }
+}
+div.interface {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 1em auto auto 1em;
+    grid-gap: 1em;
+    border: solid;
+    border-width: 0px 22px 0px 23px;
+    border-image: url(images/cadre.png) 14 22 14 23 round;
+    box-sizing: padding-box;
+    min-height: 100%;
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    background-image: url("images/fond_flocons.jpg");
+    position: relative;
+    & > header {
+        grid-row: 1;
+        grid-column: span 4;
+    }
+    & > footer {
+        grid-row: -1;
+        grid-column: span 4;
+    }
+    & > article {
+        grid-row: 2;
+        grid-column: 2;
+        flex: 1 0 0;
+    }
+    & > div.gestion {
+        grid-row: 2;
+        grid-column: 3;
+        flex: 0 0 auto;
+    }
+}
+div.contenu > p:first-child {
+    margin-top: 0;
+}
+div.gestion {
+    width: 265px;
+}
+table.perso {
+    width: 100%;
+    & td {
+        vertical-align: middle;
+    }
+    & td.donnee {
+        width: 21px;
+        font-weight: bold;
+        text-align: right;
+    }
+    & td.icone {
+        width: 21px;
+        text-align: center;
+    }
+    & td.etiquette {
+        height: 21px;
+        font-weight: bold;
+        padding-left: 3px;
+    }
+}
+tr.pair {
+    background-color: #e9edef;
+}
+tr.impair {
+    background-color: #ffffff;
+}
+div.copyright {
+    font-size: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    clear: both;
+    padding: 10px 0px;
+}
+table.imagedebut {
+}
+table.imagedebut caption {
+    font-size: smaller;
+    font-style: italic;
+}
+table.imagedebut {
+    float: right;
+    margin-left: 15px;
+}
+div.imagedebut {
+    float: right;
+    margin-left: 15px;
+}
+div.imagefin {
+    text-align: center;
+}
+/*img.tableau {
+	float:right;
+	margin-left:15px;
+}*/
+img.letterine {
+    float: left;
+    margin-right: 5px;
+    margin-top: 5px;
+}
+div.section {
+    font-family: georgia;
+    margin-bottom: 10px;
+    text-align: left;
+}
+div.section > header > h2 {
+    font-family: cabaletta;
+    font-variant: small-caps;
+    color: #902329;
+    font-size: 28px;
+    margin: 0;
+    text-align: center;
+    letter-spacing: 0.05em;
+}
+div.section div {
+    padding: 1px 2px;
+    margin: 0px 2px;
+}
+div.section div img {
+    vertical-align: bottom;
+}
+div.inventaire > div {
+    display: flex;
+    align-items: center;
+}
+div.inventaire > div > span + span {
+    margin-left: 0.5em;
+}
+div.inventaire > div > span.qte {
+    flex: 0 0 1em;
+    text-align: right;
+}
+div.inventaire > div > span.label {
+    flex: 1 0 0;
+}
+span.icone {
+    flex: 0 0 auto;
+}
+span.icone img,
+span.icone object {
+    width: 1.5em;
+    height: 1.5em;
+}
+div.statistiques {
+    font-size: 1.3em;
+}
+div.statistiques div,
+div.ennemis div,
+div.evenements div {
+    display: flex;
+    align-items: center;
+}
+div.statistiques div > .label,
+div.ennemis div > .label,
+div.evenements div > .label {
+    flex: 1 0 auto;
+}
+div.statistiques div > img,
+div.ennemis div > img,
+div.evenements div > img {
+    width: 1.2em;
+    height: 1.2em;
+    margin-right: 0.5ch;
+}
+div.statistiques div > .stat,
+div.ennemis div > .stat,
+div.evenements div > .stat {
+    order: 1;
+    display: flex;
+}
+div.statistiques div > .stat > .valeur,
+div.ennemis div > .stat > .valeur,
+div.evenements div > .stat > .valeur,
+div.statistiques div > .stat > .max,
+div.ennemis div > .stat > .max,
+div.evenements div > .stat > .max {
+    width: 2ch;
+    text-align: center;
+}
+object {
+    display: block;
+}
+nav.options {
+    font-family: arial;
+    text-align: left;
+    font-weight: bold;
+}
+nav.options h3 {
+    font-family: Cabaletta;
+    font-size: 24px;
+    margin-bottom: 0;
+}
+nav.options img {
+    border: none;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+nav.options > ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+nav.options > ul > li {
+    background-image: url(images/puce.png);
+    background-repeat: no-repeat;
+    background-position: left;
+    padding-left: 33px;
+    min-height: 31px;
+    color: #005370;
+}
+nav.options > ul > li:before {
+    content: "";
+    display: inline-block;
+    height: 31px;
+    vertical-align: middle;
+}
+nav.options > ul > li > a {
+    color: inherit;
+    text-decoration: inherit;
+    ztext-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1em;
+}
+nav.options > ul > li:hover {
+    color: #902329;
+    background-image: url(images/puceh.png);
+}
+div.combat table {
+    color: #323267;
+    background-color: #f8f8fc;
+    border-collapse: collapse;
+    width: 100%;
+    border: 0px solid #cbcbe6;
+}
+div.combat table col.stats {
+    width: 12ch;
+}
+div.combat table th,
+div.combat table td {
+    padding: 1ch;
+    border: 0px solid #000000;
+}
+div.combat table tbody td {
+    text-align: center;
+}
+div.combat table thead {
+    background-color: #eeeef7;
+}
+div.combat table img {
+    height: 2em;
+    display: block;
+    margin: 0 auto;
+}
+div.combat table th[scope="row"] {
+    text-align: left;
+}
+.boite {
+    border: 7px solid transparent;
+    border-width: 8px 8px 8px 7px;
+    border-image: url(images/boite.png) 8 8 8 7 repeat;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+.decoration img {
+    display: block;
+    margin: 0 auto;
+}
+.option {
+    padding: 0 0.25em;
+    text-align: left;
+    border-image-source: url(images/boite_inverse.png);
+    font-family: julietta, cursive;
+    margin: 1ch;
+    font-size: 1.5em;
+    color: #902329;
+}
+.option a {
+    border-radius: 1ch;
+    background-color: #ecf2f9;
+    padding: 1ch;
+    color: inherit;
+    text-decoration: inherit;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+}
+.option a::before {
+    flex: 0 0 auto;
+    margin-right: 1ch;
+    content: "";
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-image: url(images/puce.png);
+}
+.option a:hover {
+    background-color: #d9e6f2;
+}
+.option a:hover::before {
+    background-image: url(images/puceh.png);
+}
+figure {
+    float: right;
+    margin: 0;
+    margin-left: 1em;
+    display: grid;
+    grid-template-columns: min-content;
+}
+figure figcaption {
+    font-size: smaller;
+    font-style: italic;
+    text-align: center;
+}

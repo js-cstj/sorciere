@@ -1,0 +1,158 @@
+@import url(../images/averia_serif/style.css);
+@font-face {
+  font-family: cabaletta;
+  src: url(../images/CABALETT.TTF);
+  font-weight: bold;
+  font-style: normal;
+}
+
+html {
+  height: 100%;
+  --rouge: #902329;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  background-image: url(../images/cuir.png);
+  font-family: averia;
+}
+
+div.interface {
+  min-height: 100%;
+  background-image: url(../images/fond_flocons.jpg);
+  width: 1144px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: solid;
+  margin: 0 auto;
+  border-width: 0 22px 0 23px;
+  -o-border-image: url(../images/cadre.png) 14 22 14 23 round;
+     border-image: url(../images/cadre.png) 14 22 14 23 round;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+div.interface > header {
+  -webkit-box-ordinal-group: -999;
+      -ms-flex-order: -1000;
+          order: -1000;
+}
+
+div.interface > footer {
+  -webkit-box-ordinal-group: 1001;
+      -ms-flex-order: 1000;
+          order: 1000;
+  text-align: center;
+  font-size: smaller;
+  color: #999;
+  padding: .5em;
+}
+
+div.interface > .body {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+  padding: 0 2em;
+  display: -ms-grid;
+  display: grid;
+  gap: 1em 2em;
+  -ms-grid-columns: 1fr 300px;
+      grid-template-columns: 1fr 300px;
+  -ms-grid-rows: (auto)[4] 1fr;
+      grid-template-rows: repeat(4, auto) 1fr;
+  -ms-flex-line-pack: start;
+      align-content: start;
+}
+
+article {
+  grid-row: 1 / -1;
+  font-size: 18pt;
+}
+
+article figure {
+  float: left;
+  margin: 0;
+  padding: 0;
+  margin-right: 1em;
+  margin-bottom: .5em;
+}
+
+article figcaption {
+  font-size: smaller;
+  font-style: italic;
+  text-align: center;
+}
+
+article p {
+  text-align: justify;
+}
+
+article p:first-of-type {
+  margin-top: 0;
+}
+
+section {
+  -o-border-image: url(../images/boite.png) 8 8 8 7 repeat;
+     border-image: url(../images/boite.png) 8 8 8 7 repeat;
+  border-style: solid;
+  border-width: 8px 8px 8px 7px;
+  background-color: white;
+  font-size: 16pt;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: .25em;
+  color: var(--rouge);
+}
+
+section header {
+  font-family: cabaletta;
+  font-size: 24px;
+  background-color: var(--rouge);
+  color: white;
+  text-align: center;
+  grid-column: 1 / -1;
+}
+
+section > div {
+  display: contents;
+}
+
+section img.icone {
+  width: 1em;
+  height: 1em;
+}
+
+section.statistiques {
+  -ms-grid-columns: auto 1fr auto auto auto;
+      grid-template-columns: auto 1fr auto auto auto;
+  font-size: 22pt;
+}
+
+section.inventaire {
+  -ms-grid-columns: auto 1fr auto;
+      grid-template-columns: auto 1fr auto;
+}
+
+section.inventaire > div > *:first-child {
+  text-align: right;
+}
+
+section.ennemis {
+  -ms-grid-columns: 1fr auto;
+      grid-template-columns: 1fr auto;
+}
+
+section.evenements {
+  -ms-grid-columns: 1fr auto;
+      grid-template-columns: 1fr auto;
+}
+/*# sourceMappingURL=style.css.map */

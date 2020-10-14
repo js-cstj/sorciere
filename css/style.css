@@ -1,3 +1,4 @@
+@import url(exercice.css);
 @import url(../images/averia_serif/style.css);
 @font-face {
   font-family: cabaletta;
@@ -131,27 +132,27 @@ section img.icone {
   height: 1em;
 }
 
-section.statistiques {
+section#statistiques {
   -ms-grid-columns: auto 1fr auto auto auto;
       grid-template-columns: auto 1fr auto auto auto;
   font-size: 22pt;
 }
 
-section.inventaire {
+section#inventaire {
   -ms-grid-columns: auto 1fr auto;
       grid-template-columns: auto 1fr auto;
 }
 
-section.inventaire > div > *:first-child {
+section#inventaire > div > *:first-child {
   text-align: right;
 }
 
-section.ennemis {
+section#ennemis {
   -ms-grid-columns: 1fr auto;
       grid-template-columns: 1fr auto;
 }
 
-section.evenements {
+section#evenements {
   -ms-grid-columns: 1fr auto;
       grid-template-columns: 1fr auto;
 }

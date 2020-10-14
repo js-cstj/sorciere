@@ -2,107 +2,83 @@
 <html lang="fr">
 
 <head>
-	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-	<meta charset="UTF-8">
-	<link rel="icon" href="http://localhost:63492/sorciere/images/favicon.svg">
-	<link rel="stylesheet" href="sorciere.css">
-	<title>Les livres dont vous êtes le héros</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="module" src="src/App.js"></script>
+    <title>La sorcière des neiges</title>
 </head>
 
 <body>
-	<div class="interface">
-		<header><img src="images/entete.png" alt="La Sorcière des neiges" width="900" height="183"></header>
-		<footer>
-			<div class="copyright">Graphisme: Yanick Bourdel - Département des techniques d'intégration multimédia -
-				Cégep de Saint-Jérôme</div>
-		</footer>
-		<article>
-			<figure><img src="images/figures/212.png" alt="">
-				<figcaption>Deux Loups des Neiges surgissent alors en face de vous.</figcaption>
-			</figure>
-			<p>Le vent commence à se lever, vous projetant des paquets de neige au visage. Vous baissez la tête en
-				avançant encore plus lentement. Un autre bruit se fait entendre alors entre les rafales de vent : le
-				hurlement des loups ! Vous tirez votre épée, en essayant de distinguer quelque chose dans les
-				tourbillons de neige.</p>
-			<div class="combat">
-				<div class="intro">Comme s’ils venaient de nulle part, deux LOUPS DES NEIGES surgissent alors en face de
-					vous. Ils sont totalement blancs, à l’exception de leurs yeux qui sont rouge sang. Soudain, l’un
-					d’eux bondit sur vous. Vous les combattez chacun à son tour.</div>
-				<table border="1">
-					<colgroup>
-						<col class="nom">
-						<col class="stats" span="2">
-					</colgroup>
-					<thead>
-						<tr>
-							<th>Monstre</th>
-							<th><img src="images/habilete.svg" alt="Habileté">Habileté</th>
-							<th><img src="images/endurance.svg" alt="Endurance">Endurance</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr class="monstre">
-							<th class="nom" scope="row">Premier LOUP DES NEIGES</th>
-							<td class="habilete">7</td>
-							<td class="endurance">8</td>
-						</tr>
-						<tr class="monstre">
-							<th class="nom" scope="row">Deuxième LOUP DES NEIGES</th>
-							<td class="habilete">7</td>
-							<td class="endurance">7</td>
-						</tr>
-					</tbody>
-				</table><span><a href="http://localhost:63492/?livre=la_sorciere_des_neiges&amp;article=202">Victoire
-						rapide (triche).</a></span>
-			</div>
-			<div class="options">
-				<h3>Vous pouvez : </h3>
-				<div class="option"><a
-						href="http://localhost:63492/?livre=la_sorciere_des_neiges&amp;article=?action=provisions">Consommer
-						des provisions.</a></div>
-				<div class="option"><a
-						href="http://localhost:63492/?livre=la_sorciere_des_neiges&amp;article=?action=adresse">Boire
-						une potion d'Adresse.</a></div>
-			</div>
-		</article>
-		<div class="gestion">
-			<div class="boite section statistiques">
-				<header>
-					<h2>Statistiques</h2>
-				</header>
-				<div><span class="stat"><span class="valeur">7</span><span>/</span><span class="max">7</span></span><img
-						src="images/habilete.svg" alt="Habileté" width="18" height="18"><span
-						class="label">Habileté</span></div>
-				<div><span class="stat"><span class="valeur">16</span><span>/</span><span
-							class="max">16</span></span><img src="images/endurance.svg" alt="Endurance" width="18"
-						height="18"><span class="label">Endurance</span></div>
-				<div><span class="stat"><span class="valeur">10</span><span>/</span><span
-							class="max">10</span></span><img src="images/chance.svg" alt="Chance" width="18"
-						height="18"><span class="label">Chance</span></div>
-			</div>
-			<div class="boite section inventaire">
-				<header>
-					<h2>Inventaire</h2>
-				</header>
-				<div><span class="qte">10</span><span class="label">Provisions (repas)</span><span class="icone"><img
-							src="images/objet_provisions.svg" alt="Provisions (repas)"></span></div>
-				<div><span class="qte">2</span><span class="label">Potion d'Adresse</span><span class="icone"><img
-							src="images/objet_adresse.svg" alt="Potion d'Adresse"></span></div>
-			</div>
-			<div class="boite section ennemis">
-				<header>
-					<h2>Ennemis</h2>
-				</header>
-			</div>
-			<div class="boite section evenements">
-				<header>
-					<h2>Événements</h2>
-				</header>
-			</div>
-		</div>
-	</div>
-
-
+    <div class="interface">
+        <header><img src="./images/entete.png" alt="La Sorcière des Neiges"></header>
+        <footer>Graphisme: Yanick Bourdel - Département des techniques d'intégration multimédia - Cégep de Saint-Jérôme
+        </footer>
+        <div class="body" id="app">
+            <article>
+                <figure style="width:263px;">
+                    <img src="./images/figures/000.png" alt="000"/>
+                    <figcaption>Non praesentium explicabo nesciunt in maxime impedit unde.</figcaption>
+                </figure>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, repellat itaque? Vero quae sed autem quidem sit quis debitis laboriosam facere deleniti consequatur asperiores officia, corrupti voluptatibus illum. Dolore, nisi.</p>
+            </article>
+            <section id="statistiques">
+                <header>Statistiques</header>
+                <div class="stat" id="habilete">
+                    <img class="icone" src="images/habilete.svg" alt="Habileté">
+                    <span class="label">Habileté</span>
+                    <span class="valeur">99</span>
+                    <span>/</span>
+                    <span class="max">99</span>
+                </div>
+                <div class="stat" id="endurance">
+                    <img class="icone" src="images/endurance.svg" alt="Endurance">
+                    <span class="label">Endurance</span>
+                    <span class="valeur">99</span>
+                    <span>/</span>
+                    <span class="max">99</span>
+                </div>
+                <div class="stat" id="chance">
+                    <img class="icone" src="images/chance.svg" alt="Chance">
+                    <span class="label">Chance</span>
+                    <span class="valeur">99</span>
+                    <span>/</span>
+                    <span class="max">99</span>
+                </div>
+            </section>
+            <section id="inventaire">
+                <header>Inventaire</header>
+                <div class="objet">
+                    <span class="quantite">9</span>
+                    <span class="label">Lorem</span>
+                    <img class="icone" src="images/objet_lance.svg" alt="Lorem">
+                </div>
+                <div class="objet">
+                    <span class="quantite">9</span>
+                    <span class="label">Ipsum</span>
+                    <img class="icone" src="images/objet_lance.svg" alt="Ipsum">
+                </div>
+            </section>
+            <section id="ennemis">
+                <header>Ennemis</header>
+                <div class="ennemi">
+                    <span class="label">Lorem ipsum</span>
+                    <img class="icone" src="images/ennemi_rat.svg" alt="Loup des Neiges 1">
+                </div>
+                <div class="ennemi">
+                    <span class="label">Dolor sit</span>
+                    <img class="icone" src="images/ennemi_rat.svg" alt="Loup des Neiges 2">
+                </div>
+            </section>
+            <section id="evenements">
+                <header>Événements</header>
+                <div class="evenement">
+                    <span class="label">Lorem ipsum dolor sit</span>
+                    <img class="icone" src="images/evenement_dormir.svg" alt="Main gelée">
+                </div>
+            </section>
+        </div>
+    </div>
 </body>
 
 </html>

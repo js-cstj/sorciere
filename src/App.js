@@ -25,75 +25,79 @@ export default class App {
         console.log(histoire.evenements[0].evenement);
         console.log(histoire.evenements[0].icone);
         
-        // this.article();
-        // this.statistiques();
-        // this.inventaire();
-        // this.ennemis();
-        // this.evenements();
+        this.article(histoire.article);
+        this.statistiques(histoire.stats);
+        this.inventaire(histoire.inventaire);
+        this.ennemis(histoire.ennemis);
+        this.evenements(histoire.evenements);
     }
     
-    static article() {
+    static article(article) {
+        this.paragraphe(article.paragraphe);
+        this.figure(article.image);
+    }
+    
+    static paragraphe(texte) {
         var element = document.querySelector("article p");
-        element.innerHTML = histoire.article.paragraphe;
-        this.figure();
+        element.innerHTML = texte;
     }
     
-    static figure() {
+    static figure(image) {
         var figure = document.querySelector("article figure");
-        if (!histoire.article.image) {
+        if (!image) {
             figure.style.display = "none";
         } else {
-            figure.style.width = histoire.article.image.largeur + "px";
-            var image = figure.querySelector("img");
-            image.src = histoire.article.image.url;
+            figure.style.width = image.largeur + "px";
+            var img = figure.querySelector("img");
+            img.src = image.url;
             var legende = figure.querySelector("figcaption");
-            legende.innerHTML = histoire.article.image.legende;
+            legende.innerHTML = image.legende;
         }
     }
     
-    static statistiques() {
+    static statistiques(stats) {
         //HABILETE
         var valeur = document.querySelector("#habilete > span.valeur");
-        valeur.innerHTML = histoire.stats.habilete.valeur;
+        valeur.innerHTML = stats.habilete.valeur;
         var valeur = document.querySelector("#habilete > span.max");
-        valeur.innerHTML = histoire.stats.habilete.max;
+        valeur.innerHTML = stats.habilete.max;
         //ENDURANCE
         var valeur = document.querySelector("#endurance > span.valeur");
-        valeur.innerHTML = histoire.stats.endurance.valeur;
+        valeur.innerHTML = stats.endurance.valeur;
         var valeur = document.querySelector("#endurance > span.max");
-        valeur.innerHTML = histoire.stats.endurance.max;
+        valeur.innerHTML = stats.endurance.max;
         //CHANCE
         var valeur = document.querySelector("#chance > span.valeur");
-        valeur.innerHTML = histoire.stats.chance.valeur;
+        valeur.innerHTML = stats.chance.valeur;
         var valeur = document.querySelector("#chance > span.max");
-        valeur.innerHTML = histoire.stats.chance.max;
+        valeur.innerHTML = stats.chance.max;
     }
     
-    static inventaire() {
+    static inventaire(tInventaire) {
     //INVENTAIRE
         var objets = document.querySelectorAll("#inventaire>.objet");
-        objets[0].querySelector(".label").innerHTML = histoire.inventaire[0].item;
-        objets[0].querySelector(".quantite").innerHTML = histoire.inventaire[0].quantite;
-        objets[0].querySelector(".icone").src = histoire.inventaire[0].icone;
-        objets[1].querySelector(".label").innerHTML = histoire.inventaire[1].item;
-        objets[1].querySelector(".quantite").innerHTML = histoire.inventaire[1].quantite;
-        objets[1].querySelector(".icone").src = histoire.inventaire[1].icone;
+        objets[0].querySelector(".label").innerHTML = tInventaire[0].item;
+        objets[0].querySelector(".quantite").innerHTML = tInventaire[0].quantite;
+        objets[0].querySelector(".icone").src = tInventaire[0].icone;
+        objets[1].querySelector(".label").innerHTML = tInventaire[1].item;
+        objets[1].querySelector(".quantite").innerHTML = tInventaire[1].quantite;
+        objets[1].querySelector(".icone").src = tInventaire[1].icone;
     }
     
-    static ennemis() {
+    static ennemis(tEnnemis) {
         //ENNEMIS
         var ennemis = document.querySelectorAll("#ennemis>.ennemi");
-        ennemis[0].querySelector(".label").innerHTML = histoire.ennemis[0].ennemi;
-        ennemis[0].querySelector(".icone").src = histoire.ennemis[0].icone;
-        ennemis[1].querySelector(".label").innerHTML = histoire.ennemis[1].ennemi;
-        ennemis[1].querySelector(".icone").src = histoire.ennemis[1].icone;
+        ennemis[0].querySelector(".label").innerHTML = tEnnemis[0].ennemi;
+        ennemis[0].querySelector(".icone").src = tEnnemis[0].icone;
+        ennemis[1].querySelector(".label").innerHTML = tEnnemis[1].ennemi;
+        ennemis[1].querySelector(".icone").src = tEnnemis[1].icone;
     }
     
-    static evenements() {
+    static evenements(tEvenements) {
         //EVENEMENTS
         var evenements = document.querySelectorAll("#evenements>.evenement");
-        evenements[0].querySelector(".label").innerHTML = histoire.evenements[0].evenement;
-        evenements[0].querySelector(".icone").src = histoire.evenements[0].icone;
+        evenements[0].querySelector(".label").innerHTML = tEvenements[0].evenement;
+        evenements[0].querySelector(".icone").src = tEvenements[0].icone;
     }
     static init() {
         window.addEventListener("load", e => {

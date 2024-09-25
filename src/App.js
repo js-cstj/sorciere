@@ -1,7 +1,11 @@
+// Importation de l'objet histoire
 import histoire from "./histoire.js";
 
 export default class App {
     static main() {
+        /////////////////////////////////////////////////////////////////////////////
+        // Étape 1 : Récupérer les données brutes
+        /////////////////////////////////////////////////////////////////////////////
         console.log(histoire.article.paragraphe);
         console.log(histoire.article.image);
         console.log(histoire.article.image.url);
@@ -24,85 +28,63 @@ export default class App {
         console.log(histoire.ennemis[1].icone);
         console.log(histoire.evenements[0].evenement);
         console.log(histoire.evenements[0].icone);
-        
-        this.article(histoire.article);
-        this.statistiques(histoire.stats);
-        this.inventaire(histoire.inventaire);
-        this.ennemis(histoire.ennemis);
-        this.evenements(histoire.evenements);
-    }
-    
-    static article(article) {
-        this.paragraphe(article.paragraphe);
-        this.figure(article.image);
-    }
-    
-    static paragraphe(texte) {
-        var element = document.querySelector("article p");
-        element.innerHTML = texte;
-    }
-    
-    static figure(image) {
-        var figure = document.querySelector("article figure");
-        if (!image) {
-            figure.style.display = "none";
-        } else {
-            figure.style.width = image.largeur + "px";
-            var img = figure.querySelector("img");
-            img.src = image.url;
-            var legende = figure.querySelector("figcaption");
-            legende.innerHTML = image.legende;
-        }
-    }
-    
-    static statistiques(stats) {
-        //HABILETE
-        var valeur = document.querySelector("#habilete > span.valeur");
-        valeur.innerHTML = stats.habilete.valeur;
-        var valeur = document.querySelector("#habilete > span.max");
-        valeur.innerHTML = stats.habilete.max;
-        //ENDURANCE
-        var valeur = document.querySelector("#endurance > span.valeur");
-        valeur.innerHTML = stats.endurance.valeur;
-        var valeur = document.querySelector("#endurance > span.max");
-        valeur.innerHTML = stats.endurance.max;
-        //CHANCE
-        var valeur = document.querySelector("#chance > span.valeur");
-        valeur.innerHTML = stats.chance.valeur;
-        var valeur = document.querySelector("#chance > span.max");
-        valeur.innerHTML = stats.chance.max;
-    }
-    
-    static inventaire(tInventaire) {
-    //INVENTAIRE
-        var objets = document.querySelectorAll("#inventaire>.objet");
-        objets[0].querySelector(".label").innerHTML = tInventaire[0].item;
-        objets[0].querySelector(".quantite").innerHTML = tInventaire[0].quantite;
-        objets[0].querySelector(".icone").src = tInventaire[0].icone;
-        objets[1].querySelector(".label").innerHTML = tInventaire[1].item;
-        objets[1].querySelector(".quantite").innerHTML = tInventaire[1].quantite;
-        objets[1].querySelector(".icone").src = tInventaire[1].icone;
-    }
-    
-    static ennemis(tEnnemis) {
-        //ENNEMIS
-        var ennemis = document.querySelectorAll("#ennemis>.ennemi");
-        ennemis[0].querySelector(".label").innerHTML = tEnnemis[0].ennemi;
-        ennemis[0].querySelector(".icone").src = tEnnemis[0].icone;
-        ennemis[1].querySelector(".label").innerHTML = tEnnemis[1].ennemi;
-        ennemis[1].querySelector(".icone").src = tEnnemis[1].icone;
-    }
-    
-    static evenements(tEvenements) {
-        //EVENEMENTS
-        var evenements = document.querySelectorAll("#evenements>.evenement");
-        evenements[0].querySelector(".label").innerHTML = tEvenements[0].evenement;
-        evenements[0].querySelector(".icone").src = tEvenements[0].icone;
-    }
-    static init() {
-        window.addEventListener("load", e => {
-            this.main();
+
+        /////////////////////////////////////////////////////////////////////////////
+        // Étape 2 : Parcourir le document HTML
+        /////////////////////////////////////////////////////////////////////////////
+        document.querySelector("article p").style.borderColor = "green";
+        document.querySelector("article figure").style.borderColor = "green";
+        document.querySelector("article figure img").style.borderColor = "green";
+        document.querySelector("article figure figcaption").style.borderColor = "green";
+        ["habilete", "endurance", "chance"].forEach((stat) => {
+            document.querySelector(`#${stat} > span.valeur`).style.borderColor = "green";
+            document.querySelector(`#${stat} > span.max`).style.borderColor = "green";
+        });
+        document.querySelectorAll("#inventaire .objet").forEach((objet) => {
+            objet.querySelector(".label").style.borderColor = "green";
+            objet.querySelector(".quantite").style.borderColor = "green";
+            objet.querySelector(".icone").style.borderColor = "green";
+        });
+        document.querySelectorAll("#ennemis .ennemi").forEach((ennemi) => {
+            ennemi.querySelector(".label").style.borderColor = "green";
+            ennemi.querySelector(".icone").style.borderColor = "green";
+        });
+        document.querySelectorAll("#evenements .evenement").forEach((evenement) => {
+            evenement.style.borderColor = "green";
+            evenement.querySelector(".label").style.borderColor = "green";
+            evenement.querySelector(".icone").style.borderColor = "green";
+        });
+
+        /////////////////////////////////////////////////////////////////////////////
+        // Étape 3 : Placer les données dans le document HTML
+        /////////////////////////////////////////////////////////////////////////////
+        document.querySelector("article p").innerHTML = histoire.article.paragraphe;
+        document.querySelector("article figure img").src = histoire.article.image.url;
+        // document.querySelector("article figure img").style.borderColor = "green";
+        document.querySelector("article figure figcaption").innerHTML = histoire.article.image.legende;
+        ["habilete", "endurance", "chance"].forEach((stat) => {
+            document.querySelector(`#${stat} > span.valeur`).innerHTML = histoire.stats[stat].valeur;
+            document.querySelector(`#${stat} > span.max`).innerHTML = histoire.stats[stat].max;
+        });
+        document.querySelectorAll("#inventaire .objet").forEach((objet, i) => {
+            objet.querySelector(".label").innerHTML = histoire.inventaire[i].item;
+            objet.querySelector(".quantite").innerHTML = histoire.inventaire[i].quantite;
+            objet.querySelector(".icone").src = histoire.inventaire[i].icone;
+        });
+        document.querySelectorAll("#ennemis .ennemi").forEach((ennemi, i) => {
+            ennemi.querySelector(".label").innerHTML = histoire.ennemis[i].ennemi;
+            ennemi.querySelector(".icone").src = histoire.ennemis[i].icone;
+        });
+        document.querySelectorAll("#evenements .evenement").forEach((evenement, i) => {
+            evenement.querySelector(".label").innerHTML = histoire.evenements[i].evenement;
+            evenement.querySelector(".icone").src = histoire.evenements[i].icone;
+        });
+        /////////////////////////////////////////////////////////////////////////////
+        // Étape 4 : Nettoyer (version paresseux)
+        /////////////////////////////////////////////////////////////////////////////
+        document.querySelectorAll("[style]").forEach(element => {
+            element.style.border = 'none';
         });
     }
 }
-App.init();
+

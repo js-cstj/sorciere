@@ -43,7 +43,7 @@
 
 ### 2. Trouver les sélecteurs
 
-En regardant la structure du fichier `index.html`, vous devez trouver les sélecteurs qui vous permettront de modifier toutes les couleurs de bordures pour du `green`.
+En regardant la structure du fichier `index.html`, vous devez trouver les sélecteurs qui vous permettront de modifier toutes les couleurs de bordures pour du vert En ajoutant la classe `fait`.
 
 > La première commande vous est donnée en exemple.
 > 

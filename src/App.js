@@ -32,27 +32,27 @@ export default class App {
         /////////////////////////////////////////////////////////////////////////////
         // Étape 2 : Parcourir le document HTML
         /////////////////////////////////////////////////////////////////////////////
-        document.querySelector("article p").style.borderColor = "green";
-        document.querySelector("article figure").style.borderColor = "green";
-        document.querySelector("article figure img").style.borderColor = "green";
-        document.querySelector("article figure figcaption").style.borderColor = "green";
+        document.querySelector("article p").classList.add("fait");
+        document.querySelector("article figure").classList.add("fait");
+        document.querySelector("article figure img").classList.add("fait");
+        document.querySelector("article figure figcaption").classList.add("fait");
         ["habilete", "endurance", "chance"].forEach((stat) => {
-            document.querySelector(`#${stat} > span.valeur`).style.borderColor = "green";
-            document.querySelector(`#${stat} > span.max`).style.borderColor = "green";
+            document.querySelector(`#${stat} > span.valeur`).classList.add("fait");
+            document.querySelector(`#${stat} > span.max`).classList.add("fait");
         });
         document.querySelectorAll("#inventaire .objet").forEach((objet) => {
-            objet.querySelector(".label").style.borderColor = "green";
-            objet.querySelector(".quantite").style.borderColor = "green";
-            objet.querySelector(".icone").style.borderColor = "green";
+            objet.querySelector(".label").classList.add("fait");
+            objet.querySelector(".quantite").classList.add("fait");
+            objet.querySelector(".icone").classList.add("fait");
         });
         document.querySelectorAll("#ennemis .ennemi").forEach((ennemi) => {
-            ennemi.querySelector(".label").style.borderColor = "green";
-            ennemi.querySelector(".icone").style.borderColor = "green";
+            ennemi.querySelector(".label").classList.add("fait");
+            ennemi.querySelector(".icone").classList.add("fait");
         });
         document.querySelectorAll("#evenements .evenement").forEach((evenement) => {
-            evenement.style.borderColor = "green";
-            evenement.querySelector(".label").style.borderColor = "green";
-            evenement.querySelector(".icone").style.borderColor = "green";
+            evenement.classList.add("fait");
+            evenement.querySelector(".label").classList.add("fait");
+            evenement.querySelector(".icone").classList.add("fait");
         });
 
         /////////////////////////////////////////////////////////////////////////////
@@ -60,7 +60,7 @@ export default class App {
         /////////////////////////////////////////////////////////////////////////////
         document.querySelector("article p").innerHTML = histoire.article.paragraphe;
         document.querySelector("article figure img").src = histoire.article.image.url;
-        // document.querySelector("article figure img").style.borderColor = "green";
+        // document.querySelector("article figure img").classList.add("fait");
         document.querySelector("article figure figcaption").innerHTML = histoire.article.image.legende;
         ["habilete", "endurance", "chance"].forEach((stat) => {
             document.querySelector(`#${stat} > span.valeur`).innerHTML = histoire.stats[stat].valeur;

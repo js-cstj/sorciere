@@ -80,9 +80,33 @@ export default class App {
             evenement.querySelector(".icone").src = histoire.evenements[i].icone;
         });
         /////////////////////////////////////////////////////////////////////////////
-        // Étape 4 : Nettoyer (version paresseux)
+        // Étape 4 : Nettoyer
         /////////////////////////////////////////////////////////////////////////////
-        document.querySelectorAll("[style]").forEach(element => {
+        document.querySelectorAll(".fait").forEach(element => {
+            element.classList.remove("fait");
+        });
+        document.querySelectorAll(`article p,
+        article figure,
+        article figure img,
+        article figure figcaption,
+        #habilete .valeur,
+        #habilete .max,
+        #endurance .valeur,
+        #endurance .max,
+        #chance .valeur,
+        #chance .max,
+        #inventaire .objet:nth-child(2) .quantite,
+        #inventaire .objet:nth-child(2) .label,
+        #inventaire .objet:nth-child(2) .icone,
+        #inventaire .objet:nth-child(3) .quantite,
+        #inventaire .objet:nth-child(3) .label,
+        #inventaire .objet:nth-child(3) .icone,
+        #ennemis .ennemi:nth-child(2) .label,
+        #ennemis .ennemi:nth-child(2) .icone,
+        #ennemis .ennemi:nth-child(3) .label,
+        #ennemis .ennemi:nth-child(3) .icone,
+        #evenements .evenement:nth-child(2) .label,
+        #evenements .evenement:nth-child(2) .icone`).forEach(element => {
             element.style.border = 'none';
         });
     }
